@@ -1,0 +1,387 @@
+/* Animatinon des boutons sur hover */
+@keyframes gradient{
+	0% {
+	  background-position: 0% 50%
+	}
+	100%{
+	  background-position: 100% 
+	}
+  };
+
+  /* Sélécteurs Génériques */
+html{
+    box-sizing: border-box;
+}
+
+body{
+	background: no-repeat;
+	background-image: url(../img/mario.jpg);
+	background-size: cover;
+	background-origin: border-box;
+	background-position: left;
+}
+
+h1 {
+	font-family: "Pacifico", sans-serif;
+	text-shadow: 2px 2px 2px #fff;
+}
+
+.color1 {
+	color: #ff3f22;
+}
+.color2 {
+	color: #ffa800;
+}
+.color3 {
+	color: #78a2cc;
+}
+.color4 {
+	color: #00c1be;
+}
+
+section{
+	position: relative;
+    display: flex;
+	flex-direction: column;
+	height: 750px;
+}
+
+
+/* Mise en forme des 3 boutons personnalisés */
+.button2, .button3{
+	display: none;
+}
+button{
+  background: linear-gradient(to right,#acd649 0%,#f8e493 50%,#ee786e 100%);
+  background-size: 500%;
+  height: 50px;
+  border: none;
+  border-radius: 5rem;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+  color: white;
+  cursor: pointer;
+  font: 20px, sans-serif;
+  font-weight: bold;
+  letter-spacing: .05em;
+  margin: 25px 0;
+}
+button:hover{
+  animation-name: gradient;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+
+/* Message d'anniversaire */
+.birthday{
+	display: flex;
+	justify-content: center;
+	font-family: "Pacifico", sans-serif;
+	opacity: 0;
+	position: absolute;
+	text-align: center;
+	top:10%;
+}
+.SuperPhil{
+	position: absolute;
+	display: none;
+	background-image: url("../img/SuperPhilBros.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.star{
+	background-image: url("../img/star100.gif");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+/* Les nuages */
+.cloud{
+	display: none;
+	position: absolute;
+	width: 216px;
+	height: 60px;
+	background-image: url("../img/cloud.png");
+}
+.cloud1{
+	top: 10%;
+	left: 10%;
+}
+.cloud2{
+	top: 20%;
+	left: 25%;
+}
+.cloud3{
+	top: 15%;
+	left: 60%;
+}
+.cloud4{
+	top: 5%;
+	left: 75%;
+}
+
+
+/* Les pieces */
+.coin{
+	display: none;
+	position: absolute;
+	width: 43px;
+	height: 58px;
+	background-image: url("../img/coin.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+
+/* bloc jaune correspondant à une vie suppl */
+.block{
+	position: absolute;
+	bottom:180px;
+	left:45%;
+	background: url("../img/block.gif");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+
+/* image d'une vie supplementaire */
+.life{
+	display: none;
+	width: 70px;
+	height: 70px;
+	position: absolute;
+	bottom:270px;
+	left:45.5%;
+	background: url("../img/1up80.gif");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+footer{
+	position: relative;
+	height: 50px;
+	left: 0;
+	width: 100%;
+	background: #fbd001;
+}
+footer p{
+	margin: 0;
+	text-align: right;
+}
+
+
+/* La tour */
+.tower{
+	position: absolute;
+	bottom:50px;
+	right:0;
+	background: url("../img/tower.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+
+/* gif animé de mario */
+.mario{
+	position: absolute;
+	display: none;
+    width: 71px;
+    height: 71px;
+    background: url('../img/mario71.gif') left center;    
+    top:-71px;
+	left:0px;
+}
+
+
+/* sol de super mario world */
+.ground{ 
+	display: none;
+	height: 50px;
+    background-color: #C84C0C; 
+    background-image: url('../img/ground_mario_world.jpg');   
+}
+
+
+/* Les arbres */
+.tree{
+	position: absolute;
+	bottom:50px;
+}
+
+
+/* La pancarte */
+.sign{
+	position: absolute;
+	bottom:50px;
+	width: 82px;
+	height: 85px;
+	background: url("../img/sign.png");
+	bottom: 50px;
+	left: 20px;
+}
+
+
+
+/* media queries pour s'adapter sur portable et tablette */
+@media all and (max-width: 600px){
+	header{
+		height: 100px;
+		text-align: center;
+	}
+	h1 {
+		font-size: 30px;
+	}
+	button{
+		width: 100%;
+	}
+	.birthday{
+		font-size: 14px;
+		width: 100%;
+	}
+	.SuperPhil{
+		width: 100%;
+		height: 80px;
+		top: 30%;
+	}
+	.star, .block, .life{
+		width: 60px;
+		height: 60px;
+	}
+	.tree1{
+		left: 25px;   
+	}
+	.tree2, .tree3{
+		display: none;
+	}
+	.coin{
+		opacity: 0;
+	}
+	.tower{
+		width: 107px;
+		height: 146px;
+	}
+}
+
+@media (min-width: 600px) and (max-width:1200px){
+	header{
+		height: 80px;
+	}
+	h1 {
+		font-size: 30px;
+	}
+	button{
+		width: 100%;
+	}
+	.birthday{
+		font-size: 25px;
+		width: 100%;
+	}
+	.SuperPhil{
+		width: 100%;
+		height: 80px;
+		top:30%;
+	}
+	.star, .block, .life{
+		width: 80px;
+		height: 80px;
+	}
+	.tree1{
+		left: 75px;   
+	}
+	.tree2{
+		left: 300px;;   
+	}
+	.coin{
+		width: 34px;
+		height: 46px;
+	}
+	.coin1{
+		top: 80%;
+		left: 60%;
+	}
+	.coin2{
+		top: 80%;
+		left: 65%;
+	}
+	.coin3{
+		top: 80%;
+		left: 70%;
+	}
+	.coin4, .coin5{
+		opacity: 0;
+	}
+	.tower{
+		width: 143px;
+		height: 194px;
+	}
+}
+
+@media (min-width: 1200px){
+	body{
+		margin: 0 10%;
+	}
+	h1 {
+		font-size: 70px;
+		letter-spacing: -5px;
+	}
+	button{
+		width: 50%;
+	}
+	.star, .block, .life{
+		width: 100px;
+		height: 100px;
+	}
+	.birthday{
+		font-size: 30px;
+		width: 50%;
+		left:25%;
+	}
+	.SuperPhil{
+		width: 50%;
+		height: 100px;
+		left:25%;
+		top:30%;
+	}
+	.tree1{
+		left: 50px;   
+	}
+	.tree2{
+		left: 400px;;   
+	}
+	.tree3{
+		left: 800px;;   
+	}
+	.coin{
+		width: 43px;
+		height: 58px;
+	}
+	.coin1{
+		top: 80%;
+		left: 65%;
+	}
+	.coin2{
+		top: 80%;
+		left: 70%;
+	}
+	.coin3{
+		top: 80%;
+		left: 75%;
+	}
+	.coin4{
+		top: 80%;
+		left: 15%;
+	}
+	.coin5{
+		top: 80%;
+		left: 20%;
+	}
+	.tower{
+		width: 179px;
+		height: 243px;
+	}
+}
